@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  # قاعدة البيانات PostgreSQL
+  db:
+    image: postgres:16-alpine
+    container_name: teacher_booking_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: teacher
+      POSTGRES_PASSWORD: teacher_password
+      POSTGRES_DB: booking_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"   # منفذ قاعدة البيانات - مفتوح محليًا فقط لأغراض التطوير
+
+  # تطبيق FastAPI
+  api:
+    build: .
+    container_name: teacher_booking_api
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://teacher:teacher_password@db:5432/booking_db
+      ALLOWED_ORIGINS: http://localhost:3000,http://127.0.0.1:5500
+      UPLOAD_DIR: /app/uploads
+    volumes:
+      - ./uploads:/app/uploads   # حفظ ملفات الترجمة المرفوعة خارج الكونتينر
+    ports:
+      - "8000:8000"   # منفذ الـ API - نفس المنفذ المعرّف في Dockerfile، متاح على localhost:8000
+
+volumes:
+  postgres_data:
