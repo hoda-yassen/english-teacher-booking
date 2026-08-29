@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mr Ahmed Awadallah | معلم لغة إنجليزية ومترجم فوري</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-mark">A</span>
+      <span class="brand-name">Mr Ahmed Awadallah</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#about">نبذة</a>
+      <a href="#services">الخدمات</a>
+      <a href="#booking">احجز موعد</a>
+      <a href="#translation">طلب ترجمة</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>معلم لغة إنجليزية معتمد ومترجم فوري محترف</h1>
+      <p>دروس خصوصية، تحضير اختبارات دولية، وخدمات ترجمة فورية وتحريرية باحترافية عالية</p>
+      <a href="#booking" class="btn btn-primary">احجز موعدك الآن</a>
+    </div>
+    <div class="hero-image">
+      <img src="images/teacher-hero.jpg" alt="المعلم" />
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container about-inner">
+    <div class="about-portrait">
+      <img src="images/teacher-portrait-circle.jpg" alt="صورة المعلم" />
+    </div>
+    <div class="about-text">
+      <h2 class="section-title section-title-start">نبذة عني</h2>
+      <ul class="about-list">
+        <li>ليسانس آداب – قسم اللغة الإنجليزية، تخصص ترجمة – جامعة القاهرة</li>
+        <li>شهادة CELTA الدولية لتدريس اللغة الإنجليزية من جامعة كامبردج، المملكة المتحدة</li>
+        <li>منحة فولبرايت لتدريس اللغة العربية بجامعة وسترن، الولايات المتحدة</li>
+        <li>مدرس لغة إنجليزية بمدرسة دولية في القاهرة</li>
+        <li>مترجم فوري بشركة أمريكية</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">الخدمات</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>حصص خصوصي</h3>
+        <p>دروس فردية أو جماعية لكل المستويات</p>
+      </div>
+      <div class="card">
+        <h3>تحضير اختبارات</h3>
+        <p>IELTS / TOEFL وغيرها من الاختبارات الدولية</p>
+      </div>
+      <div class="card">
+        <h3>إنجليزي أعمال</h3>
+        <p>لغة إنجليزية متخصصة لبيئة العمل والشركات</p>
+      </div>
+      <div class="card">
+        <h3>ترجمة فورية</h3>
+        <p>مرافقة وترجمة فورية للاجتماعات والفعاليات</p>
+      </div>
+      <div class="card">
+        <h3>ترجمة تحريرية</h3>
+        <p>ترجمة المستندات والملفات باحترافية ودقة</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="section">
+  <div class="container narrow">
+    <h2 class="section-title">احجز موعدك</h2>
+    <form id="booking-form" class="form-card">
+      <label for="booking-name">الاسم بالكامل</label>
+      <input type="text" id="booking-name" required minlength="2" maxlength="120" />
+
+      <label for="booking-email">البريد الإلكتروني</label>
+      <input type="email" id="booking-email" required />
+
+      <label for="booking-service">الخدمة المطلوبة</label>
+      <select id="booking-service" required>
+        <option value="private_lesson">حصة خصوصي</option>
+        <option value="exam_prep">تحضير اختبارات</option>
+        <option value="business_english">إنجليزي أعمال</option>
+        <option value="interpretation">ترجمة فورية</option>
+        <option value="document_translation">ترجمة تحريرية</option>
+      </select>
+
+      <label for="booking-time">الميعاد المطلوب</label>
+      <input type="datetime-local" id="booking-time" required />
+
+      <button type="submit" class="btn btn-primary">تأكيد الحجز</button>
+      <p id="booking-message" class="form-message"></p>
+    </form>
+  </div>
+</section>
+
+<section id="translation" class="section section-alt">
+  <div class="container narrow">
+    <h2 class="section-title">طلب ترجمة ملف</h2>
+    <form id="translation-form" class="form-card" enctype="multipart/form-data">
+      <label for="translation-name">الاسم بالكامل</label>
+      <input type="text" id="translation-name" required minlength="2" maxlength="120" />
+
+      <label for="translation-email">البريد الإلكتروني</label>
+      <input type="email" id="translation-email" required />
+
+      <label for="translation-notes">ملاحظات (اختياري)</label>
+      <textarea id="translation-notes" rows="3"></textarea>
+
+      <label for="translation-file">الملف المطلوب ترجمته (PDF, DOC, DOCX, TXT)</label>
+      <input type="file" id="translation-file" accept=".pdf,.doc,.docx,.txt" required />
+
+      <button type="submit" class="btn btn-primary">إرسال الطلب</button>
+      <p id="translation-message" class="form-message"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="social-links">
+      <a href="https://www.instagram.com/mr.awadallah/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/mrawadallahtorjuman/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 8.5h2v-3.5h-2.5c-2.2 0-3.5 1.4-3.5 3.6v2.4h-2v3.5h2v7.5h3.5v-7.5h2.4l0.6-3.5h-3v-1.7c0-0.9 0.3-1.3 1-1.3z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@Mr-AwadallahTorjuman" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="6" width="19" height="12" rx="3.5"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
+    <p>&copy; <span id="year"></span> Mr Ahmed Awadallah — جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="booking.js"></script>
+</body>
+</html>
