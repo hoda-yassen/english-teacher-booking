@@ -35,7 +35,9 @@ def notify_new_booking(booking) -> None:
         f"<h2>حجز جديد</h2>"
         f"<p><b>الاسم:</b> {escape(booking.name)}</p>"
         f"<p><b>البريد الإلكتروني:</b> {escape(booking.email)}</p>"
+        f"<p><b>واتساب:</b> {escape(booking.whatsapp)}</p>"
         f"<p><b>الخدمة:</b> {escape(booking.service)}</p>"
+        f"<p><b>تفاصيل الطلب:</b> {escape(booking.details)}</p>"
         f"<p><b>الميعاد المطلوب:</b> {booking.appointment_time}</p>",
     )
 
@@ -46,6 +48,7 @@ def notify_new_translation_request(request) -> None:
         f"<h2>طلب ترجمة جديد</h2>"
         f"<p><b>الاسم:</b> {escape(request.name)}</p>"
         f"<p><b>البريد الإلكتروني:</b> {escape(request.email)}</p>"
+        f"<p><b>واتساب:</b> {escape(request.whatsapp)}</p>"
         f"<p><b>ملاحظات:</b> {escape(request.notes or '-')}</p>"
         f"<p><b>اسم الملف:</b> {escape(request.original_filename)}</p>",
     )

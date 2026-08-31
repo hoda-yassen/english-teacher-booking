@@ -16,7 +16,9 @@ class ServiceType(str, Enum):
 class BookingCreate(BaseModel):
     name: str = Field(..., min_length=2, max_length=120)
     email: EmailStr
+    whatsapp: str = Field(..., min_length=6, max_length=30)
     service: ServiceType
+    details: str = Field(..., min_length=2, max_length=2000)
     appointment_time: datetime
 
 
@@ -33,6 +35,7 @@ class TranslationRequestOut(BaseModel):
     id: int
     name: str
     email: EmailStr
+    whatsapp: str
     notes: Optional[str] = None
     original_filename: str
     created_at: datetime

@@ -50,7 +50,9 @@ def create_booking(booking: schemas.BookingCreate, db: Session = Depends(get_db)
     db_booking = models.Booking(
         name=booking.name,
         email=booking.email,
+        whatsapp=booking.whatsapp,
         service=booking.service.value,
+        details=booking.details,
         appointment_time=booking.appointment_time,
     )
     db.add(db_booking)
@@ -68,6 +70,7 @@ def create_booking(booking: schemas.BookingCreate, db: Session = Depends(get_db)
 async def create_translation_request(
     name: str = Form(..., min_length=2, max_length=120),
     email: str = Form(...),
+    whatsapp: str = Form(..., min_length=6, max_length=30),
     notes: str = Form(None),
     file: UploadFile = File(...),
     db: Session = Depends(get_db),
@@ -99,6 +102,7 @@ async def create_translation_request(
     db_request = models.TranslationRequest(
         name=name,
         email=email,
+        whatsapp=whatsapp,
         notes=notes,
         original_filename=file.filename,
         stored_filename=stored_filename,
