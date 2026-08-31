@@ -92,6 +92,9 @@
       <label for="booking-email">البريد الإلكتروني</label>
       <input type="email" id="booking-email" required />
 
+      <label for="booking-whatsapp">رقم الواتساب</label>
+      <input type="tel" id="booking-whatsapp" required minlength="6" maxlength="30" placeholder="01xxxxxxxxx" />
+
       <label for="booking-service">الخدمة المطلوبة</label>
       <select id="booking-service" required>
         <option value="private_lesson">حصة خصوصي</option>
@@ -100,6 +103,9 @@
         <option value="interpretation">ترجمة فورية</option>
         <option value="document_translation">ترجمة تحريرية</option>
       </select>
+
+      <label for="booking-details">إيه اللي محتاجه بالظبط؟</label>
+      <textarea id="booking-details" rows="3" required minlength="2" maxlength="2000" placeholder="مثال: عايز أحضّر لاختبار IELTS خلال شهرين، مستواي متوسط"></textarea>
 
       <label for="booking-time">الميعاد المطلوب</label>
       <input type="datetime-local" id="booking-time" required />
@@ -119,6 +125,9 @@
 
       <label for="translation-email">البريد الإلكتروني</label>
       <input type="email" id="translation-email" required />
+
+      <label for="translation-whatsapp">رقم الواتساب</label>
+      <input type="tel" id="translation-whatsapp" required minlength="6" maxlength="30" placeholder="01xxxxxxxxx" />
 
       <label for="translation-notes">ملاحظات (اختياري)</label>
       <textarea id="translation-notes" rows="3"></textarea>

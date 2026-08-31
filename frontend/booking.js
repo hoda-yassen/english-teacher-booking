@@ -16,7 +16,9 @@ bookingForm.addEventListener("submit", async (e) => {
   const payload = {
     name: document.getElementById("booking-name").value.trim(),
     email: document.getElementById("booking-email").value.trim(),
+    whatsapp: document.getElementById("booking-whatsapp").value.trim(),
     service: document.getElementById("booking-service").value,
+    details: document.getElementById("booking-details").value.trim(),
     appointment_time: new Date(appointmentValue).toISOString(),
   };
 
@@ -53,6 +55,7 @@ translationForm.addEventListener("submit", async (e) => {
   const formData = new FormData();
   formData.append("name", document.getElementById("translation-name").value.trim());
   formData.append("email", document.getElementById("translation-email").value.trim());
+  formData.append("whatsapp", document.getElementById("translation-whatsapp").value.trim());
   formData.append("notes", document.getElementById("translation-notes").value.trim());
   formData.append("file", document.getElementById("translation-file").files[0]);
 
